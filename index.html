@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOSH Tuition & Training</title>
+<link rel="icon" href="Schoollogo.png" type="image/x-icon">
+    <style>
+        /* Base Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            box-sizing: border-box; /* Ensure padding doesn't affect the overall width */
+        }
+
+        /* Container for Page Content */
+        .container {
+            max-width: 1200px; /* Set a max-width to control page width */
+            margin: 0 auto; /* Center the content */
+            padding: 0 20px;
+        }
+
+        /* Navigation Section */
+        nav {
+            width: 100%;
+            background-color: #1a3d8e;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 10px 20px;
+            margin: 0 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #f39c12;
+            color: #fff;
+        }
+
+        nav .left {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav .right {
+            margin-left: auto;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 50px 30px;
+            border-radius: 10px;
+            margin-top: 100px; /* Adjusted for fixed nav */
+            flex-wrap: wrap;
+            text-align: center;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url('background-image.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-text {
+            flex: 1;
+            padding-right: 20px;
+            text-align: left;
+            color: #fff;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #f39c12;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #f4f4f4;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #f39c12; /* Gold button */
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 20px auto;
+            display: block;
+            text-align: center;
+            max-width: 220px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+
+        }
+
+        .btn:hover {
+            background-color: #e67e22;
+        }
+
+        .hero-image {
+            flex: 1;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text {
+                padding-right: 0;
+            }
+
+            .hero-image img {
+                max-width: 100%;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav .left, nav .right {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Section -->
+    <nav>
+       
+        <div class="left">
+          <a href="index.html">GOSH Tuition & Training</a>
+        </div>
+         <div class="right">
+            <a href="index.html">Home</a>
+            <a href="GOSH Tuition & Training.html">Join Us</a>
+  
+        </div>
+    </nav>
+
+    <!-- Page Content Container -->
+    <div class="container">
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-text">
+                <h1> Unlock Your True Potential with GOSH</h1>
+                <p>
+
+
+
+Ready to take control of your future? At GOSH, we don’t just teach—we transform. With the skills, knowledge, and confidence to conquer any challenge, we offer flexible online and in-person lessons designed to fit your life. Don’t wait for success—create it with GOSH. Join us today and start your journey to excellence!</p>
+                <a href="GOSH Tuition & Training.html"class="btn">JOIN US</a>
+            </div>
+            <div class="hero-image">
+                <img src="Schoollogo.png" alt="School Logo">
+            </div>
+        </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOSH Tuition & Training</title>
+    <link rel="icon" href="Schoollogo.png" type="image/x-icon">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #f39c12, #1a3d8e); /* Gold to Dark Blue gradient */
+            color: white;
+            line-height: 1.6;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #f39c12; /* Gold background */
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        /* Navigation Styling */
+        nav {
+            display: flex;
+            justify-content: space-between; /* Space between the items */
+            align-items: center;
+            background-color: #1a3d8e; /* Dark Blue background */
+            padding: 15px 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #f39c12; /* Gold hover effect */
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center; /* Center the content */
+        }
+
+        /* Button Styling */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #f39c12; /* Gold button */
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 20px auto;
+            display: block;
+            text-align: center;
+            max-width: 220px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #d35400; /* Darker gold on hover */
+            transform: translateY(-3px);
+        }
+
+        /* Course Section Styling */
+        .course-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .course {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 25px;
+            border-radius: 12px;
+            max-width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .course:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .course h3 {
+            margin: 15px 0;
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .course p {
+            font-size: 16px;
+            margin: 0;
+        }
+
+        /* About Us Section Styling */
+        .about p {
+            font-size: 18px;
+            max-width: 900px;
+            margin: 20px auto;
+            text-align: center; /* Center paragraph text */
+        }
+
+        /* Footer Section */
+        footer {
+            background: #1a3d8e; /* Dark Blue background */
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .course-list {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .course {
+                max-width: 100%;
+            }
+
+            header h1 {
+                font-size: 28px;
+            }
+
+            nav a {
+                font-size: 16px;
+                padding: 8px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+  
+
+    <!-- Navigation Section -->
+    <nav>
+     <div class="left">
+          <a href="index.html">GOSH Tuition & Training</a>
+        </div>
+         <div class="right">
+            <a href="index.html">Home</a>
+            <a href="GOSH Tuition & Training.html">Join Us</a>
+  
+        </div>
+    </nav>
+
+    <!-- Courses Section -->
+    <section id="courses" class="section">
+        <h2>Our Services</h2>
+        <div class="course-list">
+            <div class="course">
+                <h3>Private Tuition</h3>
+                <p>One-on-one sessions in Mathematics, Science and English to provide personalized learning experiences.</p>
+            </div>
+            <div class="course">
+                <h3>Exam Preparation</h3>
+                <p>Prepare for Matric, O’Levels, A-Levels and university assignments with expert guidance and resources.</p>
+            </div>
+            <div class="course">
+                <h3>Skills Development</h3>
+                <p>Enhance your skills in public speaking, communication and time management for personal and professional growth.</p>
+            </div>
+            <div class="course">
+                <h3>Corporate Training</h3>
+                <p>Leadership, project management and team performance training to empower your workplace efficiency.</p>
+            </div>
+            <div class="course">
+                <h3>AgriSeta-Accredited Programs</h3>
+                <p>Learn farm management, sustainable farming and more through our accredited agricultural programs.</p>
+            </div>
+            <div class="course">
+                <h3>Learnerships and Internships</h3>
+                <p>Gain practical experience in agriculture with hands-on learnerships and internships in the industry.</p>
+            </div>
+            <div class="course">
+                <h3>Rural Development Programs</h3>
+                <p>Support sustainable livelihoods in rural communities through targeted development programs.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="section about">
+        <h2>About Us</h2>
+        <p>GOSH Tuition and Training, established in 2015 and based in Kempton Park, is a leading provider of personalized educational services. We specialize in tutoring and skill development programs for students of all ages. Our mission is to empower individuals academically and professionally through expert tutoring, innovative learning techniques, and tailored programs.</p>
+    </section>
+
+    <!-- Join Us Section -->
+    <section id="join" class="section join">
+        <h2>Would you like to join us?</h2>
+        <p>We are always looking for motivated individuals to join our Tuition & Training Academy! Click below to apply and join our academy.</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScqjR1Q8HIdwT-7sNrg85hOCrZVAmpEcC3C3WLnKoa59nK9jw/viewform?usp=sharing" class="btn">Apply Now</a>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 GOSH Tuition & Training. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
