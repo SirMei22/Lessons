@@ -6,7 +6,7 @@
     <title>GOSH Tuition & Training</title>
     <link rel="icon" href="Schoollogo.png" type="image/x-icon">
     <style>
-    body {
+        body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
@@ -26,6 +26,7 @@
             position: sticky;
             top: 0;
             z-index: 10;
+            flex-wrap: wrap; /* Allow navigation items to stack on smaller screens */
         }
 
         nav a {
@@ -50,7 +51,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-wrap: wrap;
+            flex-direction: column; /* Stack the content vertically */
         }
 
         .hero-content {
@@ -58,16 +59,19 @@
             align-items: center;
             max-width: 1200px;
             flex-wrap: wrap;
+            justify-content: center; /* Center the content */
+            padding: 0 15px;
         }
 
         .hero-logo {
-            width: 270px;
+            width: 150px; /* Smaller logo size for mobile */
             height: auto;
             margin-right: 20px;
         }
 
         .hero-text {
             max-width: 800px;
+            text-align: center;
         }
 
         .hero h1 {
@@ -96,6 +100,56 @@
             background-color: #e67e22;
         }
 
+        /* Slideshow Section */
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+        }
+
+        .slide {
+            display: none;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            font-size: 18px;
+            padding: 16px;
+            cursor: pointer;
+            border-radius: 50%;
+            z-index: 10;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        .dots-container {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .dot.active {
+            background-color: #717171;
+        }
+
         /* Responsive Styles */
         @media (max-width: 768px) {
             nav {
@@ -112,17 +166,15 @@
             .hero-content {
                 flex-direction: column;
                 text-align: center;
-                padding: 20px;
             }
 
             .hero-logo {
-                width: 150px;
-                margin-bottom: 15px;
+                width: 120px;
+                margin-bottom: 20px;
             }
 
             .hero h1 {
                 font-size: 1.8rem;
-                margin-bottom: 10px;
             }
 
             .hero p {
@@ -141,7 +193,7 @@
             }
 
             .hero-logo {
-                width: 120px;
+                width: 100px;
             }
 
             .hero h1 {
@@ -200,16 +252,13 @@
     <!-- Slideshow Section -->
     <div class="slideshow-container">
         <div class="slide">
-         <img src="image.jpg" alt="Students in class 1">
-         
+            <img src="image.jpg" alt="Students in class 1">
         </div>
         <div class="slide">
             <img src="downloaded.jpg" alt="Students in class 2">
-           
         </div>
         <div class="slide">
             <img src="imagess.jpg" alt="Students in class 3">
-          
         </div>
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
