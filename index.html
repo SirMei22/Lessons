@@ -100,55 +100,59 @@
             background-color: #e67e22;
         }
 
-        /* Slideshow Section */
-        .slideshow-container {
-            position: relative;
-            max-width: 100%;
-            margin: auto;
-        }
+    /* Slideshow Section */
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+}
 
-        .slide {
-            display: none;
-        }
+.slide img {
+    width: 80%; /* Adjust this value to reduce the image size */
+    height: auto; /* Keep the aspect ratio */
+    margin: 0 auto; /* Center the image */
+    display: block; /* Ensure it is displayed as a block */
+}
 
-        .prev, .next {
-            position: absolute;
-            top: 50%;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            font-size: 18px;
-            padding: 16px;
-            cursor: pointer;
-            border-radius: 50%;
-            z-index: 10;
-        }
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 18px;
+    padding: 16px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+}
 
-        .prev {
-            left: 10px;
-        }
+.prev {
+    left: 10px;
+}
 
-        .next {
-            right: 10px;
-        }
+.next {
+    right: 10px;
+}
 
-        .dots-container {
-            text-align: center;
-            padding: 10px;
-        }
+.dots-container {
+    text-align: center;
+    padding: 10px;
+}
 
-        .dot {
-            height: 15px;
-            width: 15px;
-            margin: 0 5px;
-            background-color: #bbb;
-            border-radius: 50%;
-            display: inline-block;
-            transition: background-color 0.3s ease;
-        }
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
 
-        .dot.active {
-            background-color: #717171;
-        }
+.dot.active {
+    background-color: #717171;
+}
+
 
         /* Responsive Styles */
         @media (max-width: 768px) {
