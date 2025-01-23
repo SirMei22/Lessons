@@ -4,156 +4,204 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GOSH Tuition & Training</title>
-<link rel="icon" href="Schoollogo.png" type="image/x-icon">
+    <link rel="icon" href="Schoollogo.png" type="image/x-icon">
     <style>
         /* Base Styles */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #ffffff;
             color: #333;
-            box-sizing: border-box; /* Ensure padding doesn't affect the overall width */
-        }
-
-        /* Container for Page Content */
-        .container {
-            max-width: 1200px; /* Set a max-width to control page width */
-            margin: 0 auto; /* Center the content */
-            padding: 0 20px;
+            line-height: 1.6;
+            box-sizing: border-box;
         }
 
         /* Navigation Section */
         nav {
-            width: 100%;
-            background-color: #1a3d8e;
-            padding: 15px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: fixed;
+            background-color: #1a3d8e; /* Dark Blue */
+            padding: 15px 30px;
+            position: sticky;
             top: 0;
-            left: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            width: 100%;
+            z-index: 10;
         }
 
         nav a {
-            color: #fff;
+            color: white;
             text-decoration: none;
-            font-size: 1rem;
+            font-size: 18px;
             padding: 10px 20px;
-            margin: 0 10px;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, padding 0.3s ease;
+            border-radius: 5px;
         }
 
         nav a:hover {
-            background-color: #f39c12;
-            color: #fff;
+            background-color: #f39c12; /* Yellow */
+            padding: 10px 25px;
         }
 
-        nav .left {
-            display: flex;
-            gap: 20px;
+        /* Slideshow Section */
+        .slideshow-container {
+            margin-top: 100px;
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
         }
 
-        nav .right {
-            margin-left: auto;
+        .slide {
+            display: none;
+        }
+
+        .slide img {
+            width: 40%;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        .caption {
+            color: #f4f4f4;
+            font-size: 1.2rem;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 10px;
+            color: #f39c12;
+            font-weight: bold;
+            font-size: 1.5rem;
+            transform: translateY(-50%);
+            user-select: none;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        .dots-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 5px;
+            background-color: #ddd;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .dot.active {
+            background-color: #1a3d8e;
         }
 
         /* Hero Section */
         .hero {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 50px 30px;
-            border-radius: 10px;
-            margin-top: 100px; /* Adjusted for fixed nav */
-            flex-wrap: wrap;
             text-align: center;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url('background-image.jpg');
-            background-size: cover;
-            background-position: center;
+            padding: 50px 20px;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            max-width: 1200px;
+        }
+
+        .hero-logo {
+            width: 270px;
+            height: auto;
+            margin-right: 20px;
         }
 
         .hero-text {
-            flex: 1;
-            padding-right: 20px;
-            text-align: left;
-            color: #fff;
+            max-width: 800px;
         }
 
-        .hero-text h1 {
-            font-size: 3rem;
-            font-weight: bold;
+        .hero h1 {
+            font-size: 2.5rem;
+            color: #1a3d8e;
             margin-bottom: 20px;
-            color: #f39c12;
         }
 
-        .hero-text p {
+        .hero p {
             font-size: 1.2rem;
-            margin-bottom: 30px;
-            color: #f4f4f4;
+            margin-bottom: 20px;
         }
 
         .btn {
             display: inline-block;
             padding: 12px 30px;
-            background-color: #f39c12; /* Gold button */
+            background-color: #f39c12;
             color: white;
             text-decoration: none;
             border-radius: 8px;
             font-weight: bold;
-            margin: 20px auto;
-            display: block;
-            text-align: center;
-            max-width: 220px;
             transition: background-color 0.3s ease, transform 0.3s ease;
-
         }
 
         .btn:hover {
             background-color: #e67e22;
         }
 
-        .hero-image {
-            flex: 1;
-            max-width: 400px;
+        /* Footer */
+        footer {
             text-align: center;
+            padding: 20px;
+            background-color: #1a3d8e;
+            color: white;
+            margin-top: 30px;
+            position: relative;
         }
 
-        .hero-image img {
-            width: 100%;
-            max-width: 350px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        footer p {
+            margin: 0;
+            font-size: 14px;
         }
 
-        /* Responsive Design */
+        /* Responsive */
         @media (max-width: 768px) {
-            .hero {
+            nav .container {
                 flex-direction: column;
                 text-align: center;
             }
 
-            .hero-text {
-                padding-right: 0;
+            .hero h1 {
+                font-size: 2rem;
             }
 
-            .hero-image img {
+            .hero p {
+                font-size: 1rem;
                 max-width: 100%;
             }
+        }
 
-            nav {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            nav .left, nav .right {
-                width: 100%;
-                justify-content: center;
+        @media (max-width: 480px) {
+            .caption {
+                font-size: 1rem;
             }
         }
     </style>
@@ -161,34 +209,84 @@
 <body>
     <!-- Navigation Section -->
     <nav>
-       
         <div class="left">
-          <a href="index.html">GOSH Tuition & Training</a>
+            <a href="index.html">GOSH Tuition & Training</a>
         </div>
-         <div class="right">
+        <div class="right">
             <a href="index.html">Home</a>
             <a href="GOSH Tuition & Training.html">Join Us</a>
-  
         </div>
     </nav>
 
-    <!-- Page Content Container -->
-    <div class="container">
-        <!-- Hero Section -->
-        <section id="home" class="hero">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <img src="Schoollogo.png" alt="GOSH Logo" class="hero-logo">
             <div class="hero-text">
-                <h1> Unlock Your True Potential with GOSH</h1>
-                <p>
-
-
-
-Ready to take control of your future? At GOSH, we don’t just teach—we transform. With the skills, knowledge, and confidence to conquer any challenge, we offer flexible online and in-person lessons designed to fit your life. Don’t wait for success—create it with GOSH. Join us today and start your journey to excellence!</p>
-                <a href="GOSH Tuition & Training.html"class="btn">JOIN US</a>
+                <h1>Welcome to GOSH Tuition & Training</h1>
+                <p>At GOSH Tuition & Training, we empower you to achieve academic excellence through personalized learning experiences tailored to your unique needs. Our expert teachers are committed to unlocking your full potential, ensuring a transformative educational journey that sets you up for success.</p>
+                <a href="GOSH Tuition & Training.html" class="btn">Learn More</a>
             </div>
-            <div class="hero-image">
-                <img src="Schoollogo.png" alt="School Logo">
-            </div>
-        </section>
+        </div>
+    </section>
+
+    <!-- Slideshow Section -->
+    <div class="slideshow-container">
+        <div class="slide">
+            <img src="images.jpeg" alt="Students in class 1">
+            <div class="caption">Engaged in group discussions</div>
+        </div>
+        <div class="slide">
+            <img src="download.jpeg" alt="Students in class 2">
+            <div class="caption">Hands-on learning</div>
+        </div>
+        <div class="slide">
+            <img src="imagess.jpeg" alt="Students in class 3">
+            <div class="caption">Focused and motivated</div>
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
+    <div class="dots-container">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2015 GOSH Tuition & Training. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            const slides = document.getElementsByClassName("slide");
+            const dots = document.getElementsByClassName("dot");
+            if (n > slides.length) slideIndex = 1;
+            if (n < 1) slideIndex = slides.length;
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+
+        setInterval(() => plusSlides(1), 5000);
+    </script>
 </body>
 </html>
