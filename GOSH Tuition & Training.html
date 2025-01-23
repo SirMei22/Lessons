@@ -5,37 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GOSH Tuition & Training</title>
     <link rel="icon" href="Schoollogo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        /* Reset some basic styles */
+        * {
             margin: 0;
             padding: 0;
-            background: linear-gradient(to bottom, #f39c12, #1a3d8e); /* Gold to Dark Blue gradient */
-            color: white;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: white; /* Yellow background */
+            color:black; /* White text color */
             line-height: 1.6;
         }
 
-        /* Header Styling */
+        /* Header Section */
         header {
-            background-color: #f39c12; /* Gold background */
+            background-color: #1a3d8e; /* Dark Blue */
             color: white;
             padding: 20px 0;
             text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         header h1 {
             margin: 0;
-            font-size: 36px;
+            font-size: 40px;
             font-weight: bold;
+            letter-spacing: 1px;
         }
 
-        /* Navigation Styling */
+        /* Navigation Section */
         nav {
             display: flex;
-            justify-content: space-between; /* Space between the items */
+            justify-content: space-between;
             align-items: center;
-            background-color: #1a3d8e; /* Dark Blue background */
+            background-color: #1a3d8e; /* Dark Blue */
             padding: 15px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
 
         nav a {
@@ -43,90 +54,97 @@
             text-decoration: none;
             font-size: 18px;
             padding: 10px 20px;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, padding 0.3s ease;
+            border-radius: 5px;
         }
 
         nav a:hover {
-            background-color: #f39c12; /* Gold hover effect */
+            background-color: #f39c12; /* Yellow */
+            padding: 10px 25px;
         }
 
-        /* Section Styling */
+        /* Section Styles */
         .section {
-            padding: 40px 20px;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .swiper {
+            width: 100%;
             max-width: 1200px;
-            margin: 0 auto;
-            text-align: center; /* Center the content */
+            margin: 0 auto 40px;
         }
 
-        /* Button Styling */
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: #f39c12; /* Gold button */
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-            margin: 20px auto;
-            display: block;
-            text-align: center;
-            max-width: 220px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: #d35400; /* Darker gold on hover */
-            transform: translateY(-3px);
-        }
-
-        /* Course Section Styling */
-        .course-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-        }
-
-        .course {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 25px;
+        .swiper-slide {
+            background-color: #1a3d8e; /* Dark Blue */
+            padding: 30px;
             border-radius: 12px;
-            max-width: 300px;
-            text-align: center;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
             transition: box-shadow 0.3s ease;
+            overflow: hidden;
         }
 
-        .course:hover {
+        .swiper-slide img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            object-fit: cover;
+        }
+
+        .swiper-slide h3 {
+            font-size: 22px;
+            margin: 15px 0;
+            font-weight: 600;
+            color: #f39c12; /* Yellow */
+        }
+
+        .swiper-slide p {
+            font-size: 20px;
+            line-height: 1.5;
+        }
+
+        .swiper-slide:hover {
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
         }
 
-        .course h3 {
-            margin: 15px 0;
-            font-size: 22px;
-            font-weight: 600;
-        }
-
-        .course p {
-            font-size: 16px;
-            margin: 0;
-        }
-
-        /* About Us Section Styling */
         .about p {
             font-size: 18px;
             max-width: 900px;
             margin: 20px auto;
-            text-align: center; /* Center paragraph text */
+            text-align: center;
+            line-height: 1.8;
         }
 
-        /* Footer Section */
+        .btn {
+            background-color: #f39c12; /* Yellow */
+            color: white;
+            padding: 12px 30px;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            background-color: #e67e22; /* Darker Yellow */
+        }
+
         footer {
-            background: #1a3d8e; /* Dark Blue background */
+            background: #1a3d8e; /* Dark Blue */
             color: white;
             text-align: center;
             padding: 20px;
-            margin-top: 20px;
+            margin-top: 40px;
         }
 
         footer p {
@@ -134,75 +152,128 @@
             font-size: 14px;
         }
 
-        /* Responsive Design */
+        /* New Footer Links */
+        footer .contact {
+            margin: 20px 0;
+        }
+
+        footer .contact a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+        }
+
+        footer .contact a:hover {
+            color: #f39c12; /* Yellow */
+        }
+
+        /* Media Queries */
         @media (max-width: 768px) {
-            .course-list {
+            nav {
                 flex-direction: column;
-                align-items: center;
+                text-align: center;
             }
 
-            .course {
-                max-width: 100%;
+            .swiper {
+                margin-bottom: 30px;
             }
 
+            .swiper-slide {
+                padding: 20px;
+            }
+
+            .about p {
+                font-size: 16px;
+            }
+
+            .btn {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
             header h1 {
-                font-size: 28px;
+                font-size: 30px;
             }
 
             nav a {
                 font-size: 16px;
-                padding: 8px 15px;
+            }
+
+            .section {
+                padding: 40px 20px;
+            }
+
+            .swiper-slide h3 {
+                font-size: 20px;
+            }
+
+            .about p {
+                font-size: 14px;
             }
         }
     </style>
 </head>
 <body>
-  
 
     <!-- Navigation Section -->
     <nav>
-     <div class="left">
-          <a href="index.html">GOSH Tuition & Training</a>
+        <div class="left">
+            <a href="index.html">GOSH Tuition & Training</a>
         </div>
-         <div class="right">
+        <div class="right">
             <a href="index.html">Home</a>
             <a href="GOSH Tuition & Training.html">Join Us</a>
-  
         </div>
     </nav>
 
-    <!-- Courses Section -->
+    <!-- Slider Section -->
     <section id="courses" class="section">
         <h2>Our Services</h2>
-        <div class="course-list">
-            <div class="course">
-                <h3>Private Tuition</h3>
-                <p>One-on-one sessions in Mathematics, Science and English to provide personalized learning experiences.</p>
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <h3>Private Tuition</h3>
+                    <p>One-on-one sessions in Mathematics, Science, and English to provide personalized learning experiences.</p>
+                </div>
+                <div class="swiper-slide">
+                    <h3>Exam Preparation</h3>
+                    <p>Prepare for Matric, O’Levels, A-Levels, and university assignments with expert guidance and resources.</p>
+                </div>
+                <div class="swiper-slide">
+                    <h3>Skills Development</h3>
+                    <p>Enhance your skills in public speaking, communication, and time management for personal and professional growth.</p>
+                </div>
+                <div class="swiper-slide">
+                    <h3>Corporate Training</h3>
+                    <p>Leadership, project management, and team performance training to empower your workplace efficiency.</p>
+                </div>
+                <div class="swiper-slide">
+                    <h3>AgriSeta-Accredited Programs</h3>
+                    <p>Learn farm management, sustainable farming, and more through our accredited agricultural programs.</p>
+                </div>
+                <div class="swiper-slide">
+                    <h3>Learnerships and Internships</h3>
+                    <p>Gain practical experience in agriculture with hands-on learnerships and internships in the industry.</p>
+                </div>
+                <div class="swiper-slide">
+                   
+                    <h3>Rural Development Programs</h3>
+                    <p>Support sustainable livelihoods in rural communities through targeted development programs.</p>
+                </div>
+<div class="swiper-slide">
+   <h3>Vermicomposting</h3>
+<p>We teach sustainable vermicomposting techniques, focusing on the use of earthworms to convert organic waste into nutrient-rich compost, enhancing soil health and promoting eco-friendly waste management.</p>
+</div>
+
+
             </div>
-            <div class="course">
-                <h3>Exam Preparation</h3>
-                <p>Prepare for Matric, O’Levels, A-Levels and university assignments with expert guidance and resources.</p>
-            </div>
-            <div class="course">
-                <h3>Skills Development</h3>
-                <p>Enhance your skills in public speaking, communication and time management for personal and professional growth.</p>
-            </div>
-            <div class="course">
-                <h3>Corporate Training</h3>
-                <p>Leadership, project management and team performance training to empower your workplace efficiency.</p>
-            </div>
-            <div class="course">
-                <h3>AgriSeta-Accredited Programs</h3>
-                <p>Learn farm management, sustainable farming and more through our accredited agricultural programs.</p>
-            </div>
-            <div class="course">
-                <h3>Learnerships and Internships</h3>
-                <p>Gain practical experience in agriculture with hands-on learnerships and internships in the industry.</p>
-            </div>
-            <div class="course">
-                <h3>Rural Development Programs</h3>
-                <p>Support sustainable livelihoods in rural communities through targeted development programs.</p>
-            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Navigation -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
         </div>
     </section>
 
@@ -221,7 +292,24 @@
 
     <!-- Footer Section -->
     <footer>
-        <p>&copy; 2024 GOSH Tuition & Training. All Rights Reserved.</p>
+        <p>&copy; 2015 GOSH Tuition & Training. All Rights Reserved.</p>
+       
+      
     </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
 </body>
 </html>
